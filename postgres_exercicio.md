@@ -208,34 +208,34 @@ Com um terminal aberto conectado ao banco (com o comando `bash connect-database`
     - Resultado esperado
 
 
-Respostas
+# Respostas
 	<ul>
-		select * from produtos limit 5;
-		select * from clientes limit 3;
-		select * from produtos where nome='Televisão 43"';
-		insert into produtos (nome, preco) values ('Macbook Pro 13"', 1700000);
-		delete from clientes where nome='Orlando Pequeno Jesus';
-		update produtos set preco=8000 where nome='Pelúcia Strange Planet com Gatinho';
-		update produtos set preco=980000 where nome='Violão Lava ME 2';
-		update clientes set cpf='04652651298' where nome='Lucca Santarém Branco';
-		insert into compras (id_cliente, id_produto) values ((select id from clientes where nome='Chico Buarque de Holanda'), (select id from produtos where nome='Violão Lava ME 2'));
-		insert into compras (id_cliente, id_produto) values ((select id from clientes where nome='Olga Cascais Fortunato'), (select id from produtos where nome='Celular Topo de Linha')), ((select id from clientes where nome='Olga Cascais Fortunato'), (select id from produtos where nome='Celular Topo de Linha'));
-		delete from compras where id_cliente=(select id from clientes where nome='Martinha Lima Zambujal') and id_produto=(select id from produtos where nome='Fone Topo de Linha');
-		select * from produtos order by preco;
-		select * from produtos order by preco limit 3;
-		select * from produtos order by preco desc limit 1;
-		select * from produtos order by preco limit 1 offset 1;
+		<li>select * from produtos limit 5;</li>
+		<li>select * from clientes limit 3;</li>
+		<li>select * from produtos where nome='Televisão 43"';</li>
+		<li>insert into produtos (nome, preco) values ('Macbook Pro 13"', 1700000);</li>
+		<li>delete from clientes where nome='Orlando Pequeno Jesus';</li>
+		<li>update produtos set preco=8000 where nome='Pelúcia Strange Planet com Gatinho';</li>
+		<li>update produtos set preco=980000 where nome='Violão Lava ME 2';</li>
+		<li>update clientes set cpf='04652651298' where nome='Lucca Santarém Branco';</li>
+		<li>insert into compras (id_cliente, id_produto) values ((select id from clientes where nome='Chico Buarque de Holanda'), (select id from produtos where nome='Violão Lava ME 2'));</li>
+		<li>insert into compras (id_cliente, id_produto) values ((select id from clientes where nome='Olga Cascais Fortunato'), (select id from produtos where nome='Celular Topo de Linha')), ((select id from clientes where nome='Olga Cascais Fortunato'), (select id from produtos where nome='Celular Topo de Linha'));
+		delete from compras where id_cliente=(select id from clientes where nome='Martinha Lima Zambujal') and id_produto=(select id from produtos where nome='Fone Topo de Linha');</li>
+		<li>select * from produtos order by preco;</li>
+		<li>select * from produtos order by preco limit 3;</li>
+		<li>select * from produtos order by preco desc limit 1;</li>
+		<li>select * from produtos order by preco limit 1 offset 1;</li>
 
 	</ul>
 
 	# Desafios
 
 	<ul>
-		select * from produtos where nome like 'Televisão%';
-		select * from produtos where preco<100000;
-		select * from produtos where nome like 'Celular%' and preco<200000;
-		select * from clientes where id not in (select id_cliente from compras);
-		select * from produtos where id in (select id_produto from compras where id_cliente=(select id from clientes where nome='Benício Freire Sampaio'));
+		<li>select * from produtos where nome like 'Televisão%';</li>
+		<li>select * from produtos where preco<100000;</li>
+		<li>select * from produtos where nome like 'Celular%' and preco<200000;</li>
+		<li>select * from clientes where id not in (select id_cliente from compras);</li>
+		<li>select * from produtos where id in (select id_produto from compras where id_cliente=(select id from clientes where nome='Benício Freire Sampaio'));</li>
 	</ul>
 
 
