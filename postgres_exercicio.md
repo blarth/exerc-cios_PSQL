@@ -209,35 +209,93 @@ Com um terminal aberto conectado ao banco (com o comando `bash connect-database`
 
 
 # Respostas
-	<ul>
-		<li>select * from produtos limit 5;</li>
-		<li>select * from clientes limit 3;</li>
-		<li>select * from produtos where nome='Televisão 43"';</li>
-		<li>insert into produtos (nome, preco) values ('Macbook Pro 13"', 1700000);</li>
-		<li>delete from clientes where nome='Orlando Pequeno Jesus';</li>
-		<li>update produtos set preco=8000 where nome='Pelúcia Strange Planet com Gatinho';</li>
-		<li>update produtos set preco=980000 where nome='Violão Lava ME 2';</li>
-		<li>update clientes set cpf='04652651298' where nome='Lucca Santarém Branco';</li>
-		<li>insert into compras (id_cliente, id_produto) values ((select id from clientes where nome='Chico Buarque de Holanda'), (select id from produtos where nome='Violão Lava ME 2'));</li>
-		<li>insert into compras (id_cliente, id_produto) values ((select id from clientes where nome='Olga Cascais Fortunato'), (select id from produtos where nome='Celular Topo de Linha')), ((select id from clientes where nome='Olga Cascais Fortunato'), (select id from produtos where nome='Celular Topo de Linha'));
-		delete from compras where id_cliente=(select id from clientes where nome='Martinha Lima Zambujal') and id_produto=(select id from produtos where nome='Fone Topo de Linha');</li>
-		<li>select * from produtos order by preco;</li>
-		<li>select * from produtos order by preco limit 3;</li>
-		<li>select * from produtos order by preco desc limit 1;</li>
-		<li>select * from produtos order by preco limit 1 offset 1;</li>
-
-	</ul>
-
-	# Desafios
-
-	<ul>
-		<li>select * from produtos where nome like 'Televisão%';</li>
-		<li>select * from produtos where preco<100000;</li>
-		<li>select * from produtos where nome like 'Celular%' and preco<200000;</li>
-		<li>select * from clientes where id not in (select id_cliente from compras);</li>
-		<li>select * from produtos where id in (select id_produto from compras where id_cliente=(select id from clientes where nome='Benício Freire Sampaio'));</li>
-	</ul>
-
+	-Exercício 1
+		```sql
+		select * from produtos limit 5;
+		```
+	-Exercício 2
+		```sql
+		select * from clientes limit 3;
+		```
+	-Exercício 3
+		```sql
+		select * from produtos where nome='Televisão 43"';
+		```
+	-Exercício 4
+		```sql
+		insert into produtos (nome, preco) values ('Macbook Pro 13"', 1700000);
+		```
+	-Exercício 5
+		```sql
+		delete from clientes where nome='Orlando Pequeno Jesus';
+		```
+	-Exercício 6
+		```sql
+		update produtos set preco=8000 where nome='Pelúcia Strange Planet com Gatinho';
+		```
+	-Exercício 7
+		```sql
+		update produtos set preco=980000 where nome='Violão Lava ME 2';
+		```
+	-Exercício 8
+		```sql
+		update clientes set cpf='04652651298' where nome='Lucca Santarém Branco';
+		```
+	-Exercício 9
+		```sql
+		insert into compras (id_cliente, id_produto) values ((select id from clientes where nome='Chico Buarque de Holanda'), (select id from produtos where nome='Violão Lava ME 2'));
+		```
+	-Exercício 10
+		```sql
+		insert into compras (id_cliente, id_produto) values ((select id from clientes where nome='Olga Cascais Fortunato'), (select id from produtos where nome='Celular Topo de Linha')), ((select id from clientes where nome='Olga Cascais Fortunato'), (select id from produtos where nome='Celular Topo de Linha'));
+		delete from compras where id_cliente=(select id from clientes where nome='Martinha Lima Zambujal') and id_produto=(select id from produtos where nome='Fone Topo de Linha');
+		```
+	-Exercício 11
+		```sql
+		delete from compras where id_cliente=(select id from clientes where nome='Martinha Lima Zambujal') and id_produto=(select id from produtos where nome='Fone Topo de Linha');
+		```
+	-Exercício 12
+		```sql
+		select * from produtos order by preco;
+		```
+	-Exercício 13
+		```sql
+		select * from produtos order by preco limit 3;
+		```
+	-Exercício 14
+		```sql
+		select * from produtos order by preco desc limit 1;
+		```
+	-Exercício 15
+		```sql
+		select * from produtos order by preco limit 1 offset 1;
+		```
+# Desafios
+	-Exercício 1
+		```sql
+		select * from produtos where nome like 'Televisão%';
+		```
+	-Exercício 2
+		```sql
+		select * from produtos where preco<100000;
+		```
+	-Exercício 3
+		```sql
+		select * from produtos where nome like 'Celular%' and preco<200000;
+		```
+	-Exercício 4
+		```sql
+		select * from clientes where id not in (select id_cliente from compras);
+		```
+	-Exercício 5
+		```sql
+		select * from produtos where id in (select id_produto from compras where id_cliente=(select id from clientes where nome='Benício Freire Sampaio'));
+		```
+	
+		
+		
+		
+		
 
 
 
